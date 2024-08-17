@@ -1,5 +1,5 @@
 <?php require("cabecalho.php"); ?>
-<h3>Exercício 1</h3>
+<h1>Exercício 1</h1>
 <form action="exer1.php" method="post">
     <div class="row">
         <div class="col">
@@ -17,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <button type="submit" class="btn btn-danger">Calcular</button>
+            <button type="submit" class="btn btn-success">Calcular Horas Trabalhadas</button>
         </div>
     </div>
 </form>

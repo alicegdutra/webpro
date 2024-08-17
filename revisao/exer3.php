@@ -19,7 +19,7 @@
     </div>
     <div class="row mt-3">
         <div class="col">
-            <button type="submit" class="btn btn-danger">Calcular Bônus</button>
+            <button type="submit" class="btn btn-success">Calcular</button>
         </div>
     </div>
 </form>
@@ -45,7 +45,7 @@ if ($_POST) {
         echo "<p>Desempenho: <strong>$desempenho</strong></p>";
         echo "<p>Bônus Recebido: <strong>R$" . number_format($bonus, 2, ',', '.') . "</strong></p>";
     } else {
-        echo "Por favor, insira valores válidos para lucros e desempenho (entre 1 e 5).";
+        echo "Insira valores válidos para lucros e desempenho (entre 1 e 5).";
     }
 }
 

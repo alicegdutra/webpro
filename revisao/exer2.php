@@ -23,7 +23,7 @@
     </div>
     <div class="row mt-3">
         <div class="col">
-            <button type="submit" class="btn btn-danger">Calcular</button>
+            <button type="submit" class="btn btn-success">Calcular</button>
         </div>
     </div>
 </form>
@@ -41,9 +41,9 @@ if ($_POST){
     if (($horas_mes) && ($valor_hora)) {
         $salario_mensal = $horas_mes * $valor_hora;
         $salario_semanal = $salario_mensal / 4;
-        echo "Salário semanal: R$" . number_format($salario_semanal, 2, ',', '.');
+        echo "Salário semanal: R$" . $salario_semanal, 2;
     } else {
-        echo "Por favor, insira valores válidos para horas trabalhadas e valor da hora.";
+        echo "Insira valores válidos para horas trabalhadas e valor da hora.";
     }
 }
 
