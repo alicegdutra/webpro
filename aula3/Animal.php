@@ -1,9 +1,10 @@
 <?php
 
-class Animal{
+abstract class Animal{
 
     protected $none;
     protected $raca;
+    abstract public function fazerBarulho();
 
     public function setNome($nome){
         $this->nome = $nome;
@@ -26,5 +27,19 @@ class Animal{
 //herança - herda de animal
 
 class Cachorro extends Animal{
+
+    private $pelagem;
+
+    public function setPelagem($pelagem){
+        $this->pelagem = $pelagem;
+    }
+
+    public function getPelagem(){
+        return $this->pelagem;
+    }
+    
+    public function FazerBarulho(){
+        return "Au Au!"
+    }
 
 }
