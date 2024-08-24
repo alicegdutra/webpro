@@ -4,7 +4,7 @@
 //todos serão abstratos na interface, mas nem todo metodo sera abstrado na classe abstrata
 
 interface Forma{
-    public function area()
+    public function area();
 }
 
 class Retangulo implements Forma {

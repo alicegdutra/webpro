@@ -2,19 +2,19 @@
 
 abstract class Animal{
 
-    protected $none;
+    protected $nome;
     protected $raca;
     abstract public function fazerBarulho();
 
-    public function setNome($nome){
+    public function setNome($nome) {
         $this->nome = $nome;
     }
 
-    public function getNome(){
+    public function getNome() {
         return $this->nome;
     }
 
-    public function setRaca(raca){
+    public function setRaca($raca){
         $this->raca = $raca;
     }
 
@@ -39,7 +39,7 @@ class Cachorro extends Animal{
     }
     
     public function FazerBarulho(){
-        return "Au Au!"
+        return "Au Au!";
     }
 
 }
