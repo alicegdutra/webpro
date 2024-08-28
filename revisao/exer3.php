@@ -1,5 +1,5 @@
 <?php require("cabecalho.php"); ?>
-<h1>Exercício 3</h1>
+<h1>Desempenho e Bônus</h1>
 <form action="exer3.php" method="post">
     <div class="row">
         <div class="col">
