@@ -1,31 +1,43 @@
 <?php
-
 class Funcionario {
     protected $nome;
-    protected $salario;
+    protected $codigo;
+    protected $salarioBase;
 
-    public function __construct($nome, $salario) {
+    public function __construct($codigo, $nome, $salarioBase) {
+        $this->codigo = $codigo;
         $this->nome = $nome;
-        $this->salario = $salario;
+        $this->salarioBase = $salarioBase;
     }
 
+  
     public function getNome() {
         return $this->nome;
     }
 
+    public function getCodigo() {
+        return $this->codigo;
+    }
+
+    public function getSalarioBase() {
+        return $this->salarioBase;
+    }
+
+    // Setters
     public function setNome($nome) {
         $this->nome = $nome;
     }
 
-    public function getSalario() {
-        return $this->salario;
+    public function setCodigo($codigo) {
+        $this->codigo = $codigo;
     }
 
-    public function setSalario($salario) {
-        $this->salario = $salario;
+    public function setSalarioBase($salarioBase) {
+        $this->salarioBase = $salarioBase;
     }
-    
-    public function calcularSalario() {
-        return $this->salario;
+
+    public function getSalarioLiquido() {
+        return $this->salarioBase;
     }
 }
+?>

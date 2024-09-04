@@ -2,28 +2,24 @@
 require_once 'Servente.php';
 
 class MestreDeObras extends Servente {
-    private $funcionariosSupervisionados;
+    private $numFuncionarios;
 
-    public function __construct($nome, $salario, $funcionariosSupervisionados) {
-        parent::__construct($nome, $salario);
-        $this->funcionariosSupervisionados = $funcionariosSupervisionados;
+    public function __construct($codigo, $nome, $salarioBase, $numFuncionarios) {
+        parent::__construct($codigo, $nome, $salarioBase);
+        $this->numFuncionarios = $numFuncionarios;
     }
 
-    public function calcularSalario() {
-        $adicional = (int)($this->funcionariosSupervisionados / 10) * 0.10;
-        return parent::calcularSalario() * (1 + $adicional);
+    public function getNumFuncionarios() {
+        return $this->numFuncionarios;
     }
 
-    public function getFuncionariosSupervisionados() {
-        return $this->funcionariosSupervisionados;
+    public function setNumFuncionarios($numFuncionarios) {
+        $this->numFuncionarios = $numFuncionarios;
     }
 
-    public function setFuncionariosSupervisionados($funcionariosSupervisionados) {
-        $this->funcionariosSupervisionados = $funcionariosSupervisionados;
+    public function getSalarioLiquido() {
+        $adicionalSupervisao = intval($this->numFuncionarios / 10) * 0.10 * $this->salarioBase;
+        return parent::getSalarioLiquido() + $adicionalSupervisao;
     }
 }
-
-$mestreDeObras = new MestreDeObras("Alice", 3000, 25);
-echo "Salário do Mestre de Obras: " . $mestreDeObras->calcularSalario() . "\n";
-echo "Funcionários supervisionados pelo Mestre de Obras: " . $mestreDeObras->getFuncionariosSupervisionados() . "\n";
 ?>

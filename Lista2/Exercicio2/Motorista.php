@@ -4,8 +4,8 @@ require_once 'Funcionario.php';
 class Motorista extends Funcionario {
     private $numeroCarteira;
 
-    public function __construct($nome, $salario, $numeroCarteira) {
-        parent::__construct($nome, $salario);
+    public function __construct($codigo, $nome, $salarioBase, $numeroCarteira) {
+        parent::__construct($codigo, $nome, $salarioBase);
         $this->numeroCarteira = $numeroCarteira;
     }
 
@@ -16,8 +16,9 @@ class Motorista extends Funcionario {
     public function setNumeroCarteira($numeroCarteira) {
         $this->numeroCarteira = $numeroCarteira;
     }
-}
 
-$motorista = new Motorista("Luiza", 3000, "123456789");
-echo "Salário do Motorista: " . $motorista->calcularSalario() . "\n";
+    public function getSalarioLiquido() {
+        return parent::getSalarioLiquido();
+    }
+}
 ?>
