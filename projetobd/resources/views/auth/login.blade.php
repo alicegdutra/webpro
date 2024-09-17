@@ -1,36 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-    <main>
-        <h3>Sistema de Gestão de Estoque - login</h3>
-        <form action="/login" method="POST">
-            @CSRF
-            <div class="row">
-                <div class="col">
-                    <label for="email" class="form-label">Informe o email</label>
-                    <input id="email" name="email" class="form-control" type="mail">
-                </div>
-                <div class="col">
-                    <label for="password" class="form-label">Informe a senha</label>
-                    <input id="password" name="password" class="form-control" type="password">
-                </div>
-            <div class="row mt-3">
-                <div class="col">
-                    <button type="submit" class="btn btn-info">Acessar</button>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center mb-4">Login</h5>
+                <form method="post" action="/login">
+                    @CSRF
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Digite seu email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha</label>
+                        <input name="password" type="password" class="form-control" id="password" placeholder="Digite sua senha">
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </div>
+                </form>
+                @if ($errors->any())
+                    <div class="alert alert-danger mt-3">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    </div>
+                @endif
             </div>
-                
-
-                
-            
-
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
